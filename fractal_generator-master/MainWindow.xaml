@@ -1,0 +1,47 @@
+﻿<Window x:Class="fractal_generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fractal_generator"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        mc:Ignorable="d"
+        
+        Title="MainWindow" Height="746" Width="1000">
+    <ScrollViewer>
+        <Grid Height="970">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <Canvas Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkCyan">
+                <Label Foreground="White" FontSize="50" Width="250" Margin="1,1">FRACTAL</Label>
+            </Canvas>
+            <Canvas Background="Gray" Grid.Row="1" Grid.Column="0"></Canvas>
+
+            <WrapPanel Orientation="Horizontal" Background="Gray" Grid.Row="1" Grid.Column="1">
+                <ListView Background="LightGray" x:Name="lv" MouseDoubleClick="Lv_OnMouseDoubleClick">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="3" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                                <Image Source="{Binding ImageData}" Height="200" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"></Image>
+                                <TextBlock Text="{Binding Name}" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </WrapPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>

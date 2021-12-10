@@ -1,0 +1,48 @@
+﻿<Window x:Class="fractal_generator.DescriptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fractal_generator"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="DescriptionWindow" Height="450" Width="800">
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100px"/>
+                <RowDefinition Height="40px"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="50px"/>
+            </Grid.RowDefinitions>
+
+            <Canvas Grid.Row="0" Grid.ColumnSpan="3" Background="CadetBlue">
+                <Label Foreground="White" FontSize="50" Width="250" Margin="1,1">FRACTAL</Label>
+            </Canvas>
+
+
+            <TextBlock Background="Gray"  Name="title" FontSize="30" Grid.Row="1" Grid.ColumnSpan="3"/>
+
+
+            <!-- this will be the header of the page-->
+            <TextBox Background="LightGray" TextWrapping="Wrap" AcceptsReturn="True"  Name="description" FontSize="20" Grid.Row="2" Grid.ColumnSpan="3"/>
+
+
+            <Image Name="img1" Grid.Row="3" Grid.Column="0" Margin="30,3,31,2"/>
+            <Image Name="img2" Grid.Row="3" Grid.Column="1" Margin="31,3,30,2"/>
+            <Image Name="img3" Grid.Row="3" Grid.Column="2" Margin="30,3,31,2"/>
+
+            <Button Name="actionButton" Content="See in Action" Click="ActionButton_OnClick_" Grid.Row="4" Grid.Column="0"/>
+            <Button Name="backButton" Content="Back" Click="ActionButton_OnClick3_" Grid.Row="4" Grid.Column="2"/>
+        </Grid>
+    </ScrollViewer>
+</Window>
